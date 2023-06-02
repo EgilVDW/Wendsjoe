@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+body {
+    margin: 0;
+    background-color: #0f171f;
+    color: #ffffff;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #ffdfbf;
+    font-size: 10vmin;
+    font-weight: 700;
+    letter-spacing: 2.5vmin;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #ffbf7f;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 1px;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #0f171f;
+    z-index: 1;
+}
+
+nav {
+    position: absolute;
+    border-bottom: solid 0.5rem #1f2f3f;
+    width: 100%;
+    background-color: #0f171f;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: #ffbf7f;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: #1f2f3f;
+}
+
+.menu-icon {
+    display: none;
+    height: 1.5rem;
+    padding: 1rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    background-color: #1f2f3f;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked ~ nav a{
+    display: inline-block;
+}
+
+.hero {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.layer-1 {
+    transform: translateZ(-0.01px) scale(1.01);
+}
+
+.layer-2 {
+    transform: translateZ(-0.5px) scale(1.5);
+}
+
+.layer-3 {
+    transform: translateZ(-1px) scale(2);
+}
+
+.layer-4 {
+    transform: translateZ(-1.5px) scale(2.5);
+}
+
+.layer-5 {
+    transform: translateZ(-2px) scale(3);
+}
+
+.layer-6 {
+    transform: translateZ(-2.5px) scale(3.5);
+}
+
+.layer-7 {
+    transform: translateZ(-3px) scale(4);
+}
+
+.layer-1,
+.layer-2,
+.layer-3,
+.layer-4,
+.layer-5,
+.layer-6,
+.layer-7 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.layer-1,
+.layer-2,
+.layer-3,
+.layer-4,
+.layer-5,
+.layer-6 {
+    animation: parallax-intro;
+    animation-duration: 2s;
+}
+
+@keyframes parallax-intro {
+    0% {
+        transform: scale(4);
+    }
+}
+
+.hero-text {
+    position: absolute;
+    text-align: center;
+    transform: translateZ(-1.25px) scale(2.25);
+    animation: text-intro;
+    animation-duration: 4s;
+}
+
+.hero-text img {
+    position: relative;
+    margin-top: -5vmin;
+    margin-bottom: -5vmin;
+    height: 20vmin;
+}
+
+@keyframes text-intro {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button {
+    display: inline-block;
+    margin: 2rem 0;
+    border: solid 0.25rem #1f2f3f;
+    border-radius: 1rem;
+    padding: 1.5rem 3rem;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #1f2f3f;
+}
+
+section,
+footer {
+    background-color: #0f171f;
+}
+
+#skills,
+#contact {
+    background-color: #1f2f3f;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 4rem;
+    max-width: 80rem;
+}
+
+hr {
+    display: block;
+    margin-bottom: 4rem;
+    border: 0;
+    border-top: 0.25rem solid #1f2f3f;
+    border-bottom: 0.25rem solid #1f2f3f;
+    border-radius: 0.25rem;
+    height: 0;
+}
+
+.about-me-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: 4rem;
+}
+
+.about-me-item img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.about-me-item p,
+.portfolio-overlay p {
+    margin-top: 0;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.skills-item {
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #17232f;
+    text-align: center;
+}
+
+.skills-icon{
+    width: 8rem;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+}
+
+.portfolio-item img {
+    border-radius: 1rem;
+    width: 100%;
+    max-height: 24rem;
+}
+
+.portfolio-overlay {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 31, 0.75);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.portfolio-overlay:hover {
+    opacity: 1;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.contact-item {
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #17232f;
+    text-align: center;
+}
+
+.contact-item .button {
+    display: block;
+}
+
+.contact-icon{
+    width: 8rem;
+}
+
+@media (max-width: 64em) {
+    nav a {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-toggle:checked ~ nav a{
+        display: block;
+    }
+
+    .about-me-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-me-item img {
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 48em) {
+    html {
+        font-size: 90%;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .content {
+        padding: 4rem 2rem;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item img {
+        max-height: none;
+    }
+}
+
+@media (max-width: 32em) {
+    html {
+        font-size: 80%;
+    }
+}
